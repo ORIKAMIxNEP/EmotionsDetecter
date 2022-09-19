@@ -11,6 +11,9 @@ let emotionsTypeJapanese = ["怒り", "嫌悪", "恐怖", "笑顔", "悲しみ",
 let maxEmotion = { emotion: null, value: 0 };
 
 function DetectEmotions() {
+  startButton = document.getElementById("start");
+  startButton.innerHTML = "推論中...";
+  startButton.disabled = true;
   setInterval(() => {
     canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
     fetch("http://192.168.0.19/api", {

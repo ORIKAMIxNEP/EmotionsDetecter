@@ -9,7 +9,9 @@
     <video id="camera" width="1280" height="720"></video>
     <p id="message"></p>
     <p id="note">※ 推論にはタイムラグが生じます。</p>
-    <button type="button" onclick="DetectEmotions()">推論開始！</button>
+    <button type="button" id="start" onclick="DetectEmotions()">
+      推論開始！
+    </button>
     <canvas id="canvas" width="1280" height="720"></canvas>
     <script src="{{ url_for('static', path='script.js') }}"></script>
     <script src="{{ url_for('static', path='DetectEmotions.js') }}"></script>
