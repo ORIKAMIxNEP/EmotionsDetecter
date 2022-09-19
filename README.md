@@ -1,1 +1,1 @@
-# SmileTrainer
+# EmotionsDetector
