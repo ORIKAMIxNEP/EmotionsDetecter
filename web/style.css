@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+
+canvas {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
