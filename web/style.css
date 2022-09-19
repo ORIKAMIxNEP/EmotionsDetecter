@@ -1,5 +1,47 @@
 * {
     margin: 0;
+    text-align: center;
+}
+
+body {
+    display: grid;
+
+    grid-template: "... ... ..." 2vh
+    "... camera  ..." 720px
+    "... ....... ..." 2vh
+    "... message ..." 5vh
+    "... ....... ..." 2vh
+    "... note    ..." 2vh
+    "... ....... ..." 1vh
+    "... button  ..." 5vh
+    "... ....... ..." 2vh
+    /35vh 1280px auto;
+}
+
+#camera {
+    grid-area: camera;
+}
+
+#message {
+    color: red;
+    font-size: 5vh;
+
+    grid-area: message;
+}
+
+#note {
+    font-size: 2vh;
+
+    grid-area: note;
+}
+
+button {
+    width: 40vh;
+    margin: auto;
+    padding: 1vh;
+    font-size: 4vh;
+
+    grid-area: button;
 }
 
 canvas {
