@@ -2,14 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="web/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://github.com/ORIKAMIxNEP/SmileTrainer/blob/master/web/style.css"
+    />
     <title>SmileTrainer</title>
   </head>
   <body>
     <video id="camera" width="1280" height="720"></video>
-    <button type="button" onclick="test()">test</button>
     <p id="message"></p>
+    <p id="note">
+      ※開発者のマシンは低スペックなので推論に約2秒のタイムラグが生じます。
+    </p>
+    <button type="button" onclick="startInference()">推論開始！</button>
     <canvas id="canvas" width="1280" height="720"></canvas>
-    <script src="web/script.js"></script>
+    <script src="https://github.com/ORIKAMIxNEP/SmileTrainer/blob/master/web/script.js"></script>
   </body>
 </html>
