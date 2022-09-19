@@ -2,20 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://ORIKAMIxNEP.github.io/SmileTrainer/web/style.css"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}" />
     <title>SmileTrainer</title>
   </head>
   <body>
     <video id="camera" width="1280" height="720"></video>
     <p id="message"></p>
-    <p id="note">
-      ※開発者のマシンは低スペックなので推論に約2秒のタイムラグが生じます。
-    </p>
+    <p id="note">※ 推論にはタイムラグが生じます。</p>
     <button type="button" onclick="startInference()">推論開始！</button>
     <canvas id="canvas" width="1280" height="720"></canvas>
-    <script src="https://ORIKAMIxNEP.github.io/SmileTrainer/web/script.js"></script>
+    <script src="{{ url_for('static', path='script.js') }}"></script>
   </body>
 </html>

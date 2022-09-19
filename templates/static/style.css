@@ -39,6 +39,7 @@ button {
     width: 40vh;
     margin: auto;
     padding: 1vh;
+    background-color: white;
     font-size: 4vh;
 
     grid-area: button;
