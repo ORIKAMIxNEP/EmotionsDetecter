@@ -7,7 +7,7 @@ let emotionsTypeEnglish = [
   "sadness",
   "surprise",
 ];
-let emotionsTypeJapanese = ["怒り", "嫌悪", "恐怖", "笑顔", "悲しみ", "驚き"];
+let emotionsTypeJapanese = ["怒り", "嫌悪", "恐怖", "喜び", "悲しみ", "驚き"];
 let maxEmotion = { emotion: null, value: 0 };
 
 function DetectEmotions() {
