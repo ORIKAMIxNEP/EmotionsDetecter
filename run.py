@@ -1,12 +1,14 @@
+import base64
+
+import uvicorn
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from starlette.requests import Request
 from starlette.templating import Jinja2Templates  # new
-import uvicorn
-import base64
+
 from python.DetectEmotions import DetectEmotions
 from python.FormatDictionary import FormatDictionary
 

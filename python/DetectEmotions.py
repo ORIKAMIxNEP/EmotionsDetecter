@@ -1,5 +1,6 @@
-from feat import Detector
 import time
+
+from feat import Detector
 
 detector = Detector(
     au_model="JAANET",
