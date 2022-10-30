@@ -16,7 +16,7 @@ function DetectEmotions() {
   startButton.disabled = true;
   setInterval(() => {
     canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
-    fetch("http://192.168.0.19/api", {
+    fetch("http://127.0.0.1/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -27,15 +27,19 @@ function DetectEmotions() {
         return response.json();
       })
       .then(function (data) {
-        maxEmotion.value = 0;
-        for (let i = 0; i < emotionsTypeEnglish.length; i++) {
-          if (data[emotionsTypeEnglish[i]] > maxEmotion.value) {
-            maxEmotion.emotion = emotionsTypeJapanese[i];
-            maxEmotion.value = data[emotionsTypeEnglish[i]];
+        if (data[emotionsTypeEnglish[0]] === "nan") {
+          maxEmotion.emotion = "顔をカメラに近づけてください";
+        } else {
+          maxEmotion.value = 0;
+          for (let i = 0; i < emotionsTypeEnglish.length; i++) {
+            if (data[emotionsTypeEnglish[i]] > maxEmotion.value) {
+              maxEmotion.emotion = emotionsTypeJapanese[i];
+              maxEmotion.value = data[emotionsTypeEnglish[i]];
+            }
           }
-        }
-        if (data.neutral - 0.4 > maxEmotion.value) {
-          maxEmotion.emotion = "真顔";
+          if (data.neutral - 0.4 > maxEmotion.value) {
+            maxEmotion.emotion = "真顔";
+          }
         }
         document.getElementById("message").innerHTML = maxEmotion.emotion;
       });
