@@ -15,7 +15,19 @@ function DetectEmotions() {
   startButton.innerHTML = "推論中...";
   startButton.disabled = true;
   setInterval(() => {
-    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas
+      .getContext("2d")
+      .drawImage(
+        video,
+        (video.width - canvas.width) / 2,
+        (video.height - canvas.height) / 2,
+        canvas.width,
+        canvas.height,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
     fetch("http://127.0.0.1/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,7 +40,7 @@ function DetectEmotions() {
       })
       .then(function (data) {
         if (data[emotionsTypeEnglish[0]] === "nan") {
-          maxEmotion.emotion = "顔をカメラに近づけてください";
+          maxEmotion.emotion = "顔を中心にしてください";
         } else {
           maxEmotion.value = 0;
           for (let i = 0; i < emotionsTypeEnglish.length; i++) {

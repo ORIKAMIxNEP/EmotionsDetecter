@@ -13,9 +13,9 @@ body {
     "... ....... ..." 2vh
     "... note    ..." 2vh
     "... ....... ..." 1vh
-    "... button  ..." 5vh
+    "... button  ..." 6vh
     "... ....... ..." 2vh
-    /35vh 1280px auto;
+    /320px 1280px auto;
 }
 
 #camera {
@@ -38,7 +38,7 @@ body {
 button {
     width: 40vh;
     margin: auto;
-    padding: 1vh;
+    padding: .5vh;
     background-color: white;
     font-size: 4vh;
 
