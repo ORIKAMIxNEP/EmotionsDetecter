@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from starlette.requests import Request
-from starlette.templating import Jinja2Templates  # new
+from starlette.templating import Jinja2Templates
 
 from python.DetectEmotions import DetectEmotions
 from python.FormatDictionary import FormatDictionary
