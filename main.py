@@ -33,7 +33,7 @@ class Image(BaseModel):
 
 
 @ app.get("/")
-def index(request: Request):
+def IndexHTML(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
