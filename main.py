@@ -39,7 +39,7 @@ def IndexHTML(request: Request):
 
 @ app.post("/api")
 async def API(image: Image):
-    with open("image.png", "wb") as file:
+    with open("image.jpg", "wb") as file:
         file.write(base64.b64decode(image.imageBase64))
     return JSONResponse(content=FormatDictionary(DetectEmotions()))
 
