@@ -14,7 +14,7 @@ def DetectEmotions():
     startTime = time.time()
     try:
         EmotionsData = detector.detect_image(
-            "image.png", batch_size=10).emotions.to_dict("dict")
+            "image.jpg", batch_size=10).emotions.to_dict("dict")
         print("実行時間：" + str(time.time() - startTime))
     except:
         EmotionsData = {"anger": "nan", "disgust": "nan", "fear": "nan",
