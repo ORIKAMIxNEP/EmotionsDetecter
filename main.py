@@ -14,7 +14,7 @@ from python.FormatDictionary import FormatDictionary
 
 app = FastAPI()
 app.mount(
-    "/templates/static",
+    "templates/static",
     StaticFiles(directory="templates/static"),
     name="static"
 )
