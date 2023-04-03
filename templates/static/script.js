@@ -1,4 +1,4 @@
-let video = document.getElementById("camera");
+const video = document.getElementById("camera");
 
 navigator.mediaDevices
   .getUserMedia({
