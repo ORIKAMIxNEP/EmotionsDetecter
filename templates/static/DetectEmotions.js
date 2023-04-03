@@ -1,5 +1,5 @@
-let canvas = document.getElementById("canvas");
-let emotionsTypeEnglish = [
+const canvas = document.getElementById("canvas");
+const emotionsTypeEnglish = [
   "anger",
   "disgust",
   "fear",
@@ -7,7 +7,7 @@ let emotionsTypeEnglish = [
   "sadness",
   "surprise",
 ];
-let emotionsTypeJapanese = ["怒り", "嫌悪", "恐怖", "喜び", "悲しみ", "驚き"];
+const emotionsTypeJapanese = ["怒り", "嫌悪", "恐怖", "喜び", "悲しみ", "驚き"];
 let maxEmotion = { emotion: null, value: 0 };
 
 function DetectEmotions() {
@@ -28,7 +28,7 @@ function DetectEmotions() {
         canvas.width,
         canvas.height
       );
-    fetch("http://127.0.0.1/api", {
+    fetch("http://127.0.0.1:8000/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -55,5 +55,5 @@ function DetectEmotions() {
         }
         document.getElementById("message").innerHTML = maxEmotion.emotion;
       });
-  }, 2000);
+  }, 3000);
 }
