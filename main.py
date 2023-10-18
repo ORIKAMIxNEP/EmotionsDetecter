@@ -13,17 +13,13 @@ from python.DetectEmotions import DetectEmotions
 from python.FormatDictionary import FormatDictionary
 
 app = FastAPI()
-app.mount(
-    "/templates/static",
-    StaticFiles(directory="templates/static"),
-    name="static"
-)
+app.mount("/templates/static", StaticFiles(directory="templates/static"), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 templates = Jinja2Templates(directory="templates")
 
@@ -32,16 +28,17 @@ class Image(BaseModel):
     imageBase64: str
 
 
-@ app.get("/")
+@app.get("/")
 def IndexHTML(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@ app.post("/api")
+@app.post("/api")
 async def API(image: Image):
     with open("image.jpg", "wb") as file:
         file.write(base64.b64decode(image.imageBase64))
     return JSONResponse(content=FormatDictionary(DetectEmotions()))
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=80)
