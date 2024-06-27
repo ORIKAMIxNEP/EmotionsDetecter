@@ -1,1 +1,1 @@
-# emotions-detector
+# Emotions Detector
